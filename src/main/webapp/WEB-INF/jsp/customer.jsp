@@ -21,18 +21,18 @@
         <th>邮箱地址</th>
         <th>操作</th>
     </tr>
-    <c:forEach var="customer" items="${customers}">
-        <tr>
-            <td>${customer.name}</td>
-            <td>${customer.contact}</td>
-            <td>${customer.phone}</td>
-            <td>${customer.email}</td>
-            <td>
-                <a href="${BASE}/customer_edit?id=${customer.id}">编辑</a>
-                <a href="${BASE}/customer_delete?id=${customer.id}">删除</a>
-            </td>
-        </tr>
-    </c:forEach>
+        <c:forEach var="customer" items="${customers}">
+            <tr>
+                <td>${customer.name}</td>
+                <td>${customer.contact}</td>
+                <td>${customer.phone}</td>
+                <td>${customer.email}</td>
+                <td>
+                    <a href="${BASE}/customer_edit?id=${customer.id}">编辑</a>
+                    <a href="${BASE}/customer_delete?id=${customer.id}">删除</a>
+                </td>
+            </tr>
+        </c:forEach>
 </table>
 
 </body>

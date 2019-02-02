@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * 进入客户列表界面
  */
+/*
 @WebServlet("/customer")
 public class CustomerServlet extends HttpServlet{
        CustomerService customerService = new CustomerService();
@@ -25,4 +26,4 @@ public class CustomerServlet extends HttpServlet{
         
     }
 
-    }
+    }*/

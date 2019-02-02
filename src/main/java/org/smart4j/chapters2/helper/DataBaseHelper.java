@@ -1,5 +1,6 @@
 package org.smart4j.chapters2.helper;
 import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp.managed.BasicManagedDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -30,16 +31,11 @@ public class DataBaseHelper {
         USERNAME = props.getProperty("jdbc.username");
         PASSWORD = props.getProperty("jdbc.password");
         DATA_SOURCE  = new BasicDataSource();
+        DATA_SOURCE.setDriverClassName(DRIVER);
         DATA_SOURCE.setUrl(URL);
         DATA_SOURCE.setUsername(USERNAME);
         DATA_SOURCE.setPassword(PASSWORD);
-
-        try {
-            Class.forName(DRIVER);
-        } catch (ClassNotFoundException e) {
-            LOGGER.error("can not load jdbc driver...");
-        }
-
+        DATA_SOURCE.setInitialSize(10);
     }
     /**
      * 获取数据库连接
